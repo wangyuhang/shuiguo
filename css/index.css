@@ -39,23 +39,29 @@
 .recomm_bar ul li img{width:200px; height: 176px;}
 
 .classify_list{}
-.classify_list{}
-.fruit_nav{width:152px; height:526px; background-color:#17dfc2;}
+.classify_list{margin-top:40px;}
+.classify_title{line-height:1; padding-bottom:10px; border-bottom:3px solid #666; position:relative; z-index:1; -webkit-box-shadow:0 8px 3px -2px rgba(0,0,0,.05); -moz-box-shadow:0 8px 3px -2px rgba(0,0,0,.05); -ms-box-shadow:0 8px 3px -2px rgba(0,0,0,.05); -o-box-shadow:0 8px 3px -2px rgba(0,0,0,.05); box-shadow:0 8px 3px -2px rgba(0,0,0,.05)}
+.classify_title h2{margin-left:15px; font-size:20px;}
+.classify_list .nav{width:152px; height:526px; padding-top:15px; position:relative; float:left;}
+.classify_list .nav ul{height:250px; border-top:1px solid rgba(0,0,0,.07);}
+.classify_list .nav ul li{}
+.classify_list .nav ul li a{display:block; height:45px; line-height:45px; color:#fff; text-indent:15px; font-size:14px; letter-spacing:.1em; position:relative;}
+.classify_list .nav ul li a span{display:block; height:44px; margin:0 15px; border:1px solid rgba(0,0,0,.07); border-left:0; border-right:0;}
+.classify_list .nav ul li a:hover{text-decoration:none;}
+.classify_list .nav ul li a s{_display:none; width:0; height:0; border:22.5px solid transparent; _border-color:tomato; position:absolute; right:-44px; top:0; _filter:chroma(color=#ff6347); z-index:1}
+.classify_list .nav ul li a s:before{content:''; display:block; width:0; height:0; border:23.5px solid transparent; position:absolute; top:-22.5px; left:-22.5px;  _border:0}
+.classify_list .nav ul li a.on{position:relative; z-index:1; background-color:#444; -webkit-box-shadow:0 2px 1px rgba(0,0,0,.2); -moz-box-shadow:0 2px 1px rgba(0,0,0,.2); -ms-box-shadow:0 2px 1px rgba(0,0,0,.2); -o-box-shadow:0 2px 1px rgba(0,0,0,.2); box-shadow:0 2px 1px rgba(0,0,0,.2)}
+.classify_list .nav ul li a.on span{border-color:transparent;}
+.classify_list .nav ul li a.on s{border-left-color:#444;}
+.classify_list .nav ul li a.on s:before{border-left-color:rgba(68,68,68,.8); _border:0;}
+.fruit_nav{background-color:#17dfc2; border-radius:0 0 20px 0;}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.classify_slide{}
+.goods_list dl{height:243px; width:159px; padding:10px 20px; margin-left:-1px; border-left:1px solid #e7e7e7; position:relative; float:left;}
+.goods_list dl img{display:block; height:160px; overflow:hidden;}
+.goods_list dl del,.goods_list dl em {display:block; font-style:normal;}
+.goods_list dldel {margin-top:5px; color:#999; font-size:13px;}
+.goods_list dl em {margin-top:-7px; color:#e22a40; font-weight:700; font-family:arial; font-size:18px; -webkit-transition:all .2s ease-in; -moz-transition:all .2s ease-in; -ms-transition:all .2s ease-in; -o-transition:all .2s ease-in; transition:all .2s ease-in;}
+.goods_list dl em s {font-size:12px}
+.goods_list dl .shopping_car{display:block; width:41px; height:41px; background:url(../images/shopping_car.png); position:absolute; bottom:17px; right:20px;}
 
