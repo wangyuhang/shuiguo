@@ -1,0 +1,34 @@
+body{background:url(../images/detail_bg.png) repeat-x;}
+.constr{width:990px;}
+
+.big_pic{width:360px; height:360px; padding:20px; background-color:#fff; float:left;}
+.big_pic img{width:360px; height:360px;}
+
+.simple_info .constr{background-color:#f8f8f8; box-shadow:0 0 14px #999;}
+.info_text{width:590px; float:left;}
+.info_text h2{padding:20px 20px 5px 20px; font-size:18px; font-weight:bold;}
+.info_text .sub_title{padding:0 20px; color:#754;}
+.info_text .pric_cell{padding-top:20px; padding-bottom:5px; background:url(../images/pric_bg.png) repeat-x; width:100%; position:relative; left:0; border-left:4px solid transparent; z-index:10; background-position:right 0;}
+.info_text .pric_cell .yen{font-family:arial; font-style:normal;}
+.y_pric{padding-left:20px; font-size:34px; font-weight:bolder; color:#fff; font-family:Arial; -webkit-font-smoothing: antialiased;}
+.y_pric .yen{margin-left:20px;}
+.del_pric{margin-left:90px; color:#ffc5c5; font-weight:700; padding-left:0; font-size:14px}
+.del_pric .price{text-decoration:line-through; font-weight:400;}
+
+.weight_cell{margin:5px 20px; color:#999;}
+.weight_cell .num{margin:0 5px 0 40px; color:#000;}
+
+.nun_cell{padding:20px 0; margin:0 20px; border-width:1px 0px; border-style:dotted; border-color:#e5e5e5;}
+.nun_cell label{color:#999; margin-right:53px; float:left;}
+.nun_cell input{color:#666; font-size:12px; margin:0; padding:3px 2px 0 3px; height:26px; border:1px solid #a7a6ac; width:52px; line-height:26px; background:url(../images/input_bg.png) no-repeat; float:left;}
+.nun_cell .increase_btn,.nun_cell .decrease_btn{display:block; width:16px; height:12px; margin-bottom:3px; overflow:hidden; cursor:pointer; border:1px solid #a7a6ab; background-repeat:no-repeat; background-image:url(../images/icon2.png);}
+.nun_cell .increase_btn{background-position:-89px -14px;}
+.nun_cell .decrease_btn{background-position:0 -49px}
+
+
+
+
+
+
+
+

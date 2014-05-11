@@ -1,14 +1,4 @@
 @charset "utf-8";
-
-.head_nav{height:27px; line-height:27px; background-color:#f2f2f2; border-bottom:1px solid #e5e5e5;}
-
-.head{height:108px; overflow:hidden;}
-.logo_cell{float:left;}
-.search_cell{padding-top:30px; float:left;}
-.search_bg{width:520px; height:20px; padding:8px 0 8px 20px; background:url(../images/search_bg.gif);}
-.search_bg input{width:410px; height:20px; line-height:20px; padding-right:20px; float:left; color:#999;}
-.search_bg .submit{display:inline-block; width:70px; height: 20px; float:left;}
-
 .recomm .constr{border-top:1px solid #2f2f2f;}
 .recomm .shopping_nav{width:208px; height:515px; padding:0 15px 15px 15px; border-width:0px 1px 1px 1px; border-style:solid; border-color:#e5e5e5; float:left;}
 .recomm .shopping_nav ul li{height:50px; padding:15px 0; border-bottom:1px solid #e5e5e5;}
