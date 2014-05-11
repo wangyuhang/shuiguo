@@ -25,6 +25,19 @@ body{background:url(../images/detail_bg.png) repeat-x;}
 .nun_cell .increase_btn{background-position:-89px -14px;}
 .nun_cell .decrease_btn{background-position:0 -49px}
 
+.btn_cell{padding:20px;}
+.buy_btn,.add_btn{display:inline-block; width:167px; height:33px; line-height:33px; text-align:center; background:url(../images/btn.png);}
+.add_btn{background-position:-167px 0; margin-left:20px;}
+
+.dispatch_cell{padding:0 20px 0 20px; color:#865;}
+.dispatch_cell span{color:#999;}
+
+.detail_info{margin-top:20px;}
+.detail_info .recomm_cell{width:190px; float:left; border:1px solid #e4e4e4;}
+.detail_info .recomm_cell .title{padding:0 10px; background-color:#e5e5e5; border-bottom:1px solid #e4e4e4; font-weight:bold;}
+.detail_info .recomm_cell .list_cell{padding:5px; background-color:#fff;}
+.detail_info .detail_cell{width:798px; background-color:#fff; overflow:hidden; float:left;}
+
 
 
 
