@@ -50,14 +50,15 @@
 .classify_list .nav ul li a:hover{text-decoration:none;}
 .classify_list .nav ul li a s{_display:none; width:0; height:0; border:22.5px solid transparent; _border-color:tomato; position:absolute; right:-44px; top:0; _filter:chroma(color=#ff6347); z-index:1}
 .classify_list .nav ul li a s:before{content:''; display:block; width:0; height:0; border:23.5px solid transparent; position:absolute; top:-22.5px; left:-22.5px;  _border:0}
-.classify_list .nav ul li a.on{position:relative; z-index:1; background-color:#444; -webkit-box-shadow:0 2px 1px rgba(0,0,0,.2); -moz-box-shadow:0 2px 1px rgba(0,0,0,.2); -ms-box-shadow:0 2px 1px rgba(0,0,0,.2); -o-box-shadow:0 2px 1px rgba(0,0,0,.2); box-shadow:0 2px 1px rgba(0,0,0,.2)}
-.classify_list .nav ul li a.on span{border-color:transparent;}
-.classify_list .nav ul li a.on s{border-left-color:#444;}
-.classify_list .nav ul li a.on s:before{border-left-color:rgba(68,68,68,.8); _border:0;}
+.classify_list .nav ul li.on a{position:relative; z-index:1; background-color:#444; -webkit-box-shadow:0 2px 1px rgba(0,0,0,.2); -moz-box-shadow:0 2px 1px rgba(0,0,0,.2); -ms-box-shadow:0 2px 1px rgba(0,0,0,.2); -o-box-shadow:0 2px 1px rgba(0,0,0,.2); box-shadow:0 2px 1px rgba(0,0,0,.2)}
+.classify_list .nav ul li.on  aspan{border-color:transparent;}
+.classify_list .nav ul li.on a s{border-left-color:#444;}
+.classify_list .nav ul li.on a s:before{border-left-color:rgba(68,68,68,.8); _border:0;}
 .fruit_nav{background-color:#17dfc2; border-radius:0 0 20px 0;}
 
-.classify_slide{}
-.goods_list dl{height:243px; width:159px; padding:10px 20px; margin-left:-1px; border-left:1px solid #e7e7e7; position:relative; float:left;}
+.classify_slide{width:1038px; height:526px; overflow:hidden; float:left;}
+.goods_list{width:1038px; height:526px; overflow:hidden}
+.goods_list dl{height:243px; width:167px; padding:10px 20px; margin-left:-1px; border-left:1px solid #e7e7e7; position:relative; float:left;}
 .goods_list dl img{display:block; height:160px; overflow:hidden;}
 .goods_list dl del,.goods_list dl em {display:block; font-style:normal;}
 .goods_list dldel {margin-top:5px; color:#999; font-size:13px;}
