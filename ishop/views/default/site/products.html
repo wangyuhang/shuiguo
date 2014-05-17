@@ -1,0 +1,230 @@
+<link rel="stylesheet" type="text/css" href="theme/css/detail.css">
+<!--顶部导航-->
+<div class="head_nav">
+	<div class="constr">
+		<a href="#" target="_blank">登录</a>
+		<a href="#" target="_blank">注册</a>
+	<div>
+</div>
+<!--顶部导航 end-->
+
+<!--logo bar-->
+<div class="head">
+	<div class="constr fix">
+		<div class="logo_cell">
+			<a href="#" target="_blank"><img src="" /></a>
+		</div>
+		<div class="search_cell">
+			<div class="search_bg fix">
+				<input type="text" />
+				<a class="submit" href="javascript:;"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--logo bar end-->
+
+<!--商品信息头部-->
+<div class="simple_info">
+	<div class="constr fix">
+		<div class="big_pic">
+			<img src="{$img}" />
+		</div>
+		<div class="info_text">
+			<h2>{$name}</h2>
+			<div class="pric_cell">
+				<div class="y_pric">
+					<span class="f14 vm">促销价</span>
+					<em class="yen">¥</em>
+					<span class="price" id="real_price">{$sell_price}</span>
+				</div>
+				<div class="del_pric">
+					一口价 
+					<em class="yen">¥</em> 
+					<span class="price">{$market_price}</span>
+				</div>
+			</div>
+			<div class="weight_cell">重量：<span class="num">{$weight}</span>{$unit}</div>
+			{if:$store_nums <= 0}
+			该商品已售完，不能购买，您可以看看其它商品！(<a href="{url:/simple/arrival/goods_id/$id}" class="orange">到货通知</a>)
+			{else:}
+			<div class="nun_cell fix">
+				<div class="l fix">
+					<label>数量</label>
+					<input type="text" value="1" maxlength="5" onblur="checkBuyNums();" id="buyNums"   />
+					<span class="l ml5">
+						<a class="increase_btn" href="javascript:modified(1);"></a>
+						<a class="decrease_btn" href="javascript:modified(-1);"></a>
+					</span>
+				</div>
+				<div class="l ml20">库存<span id="data_storeNums">{$store_nums}</span>件</div>
+			</div>
+			<div class="btn_cell">
+				<a class="buy_btn" href="javascript:;" onclick="buy_now();"></a>
+				<a class="add_btn" href="javascript:;" onclick="joinCart();"></a>
+			</div>
+			{/if}
+			<div class="dispatch_cell"><span>配送范围：</span>宁波老三区</div>
+		</div>
+	</div>
+</div>
+<!--商品信息头部 end-->
+
+<!--商品信息详情页-->
+<div class="detail_info">
+	<div class="fix">
+		<div class="recomm_cell">
+			<div class="title">热销商品推荐</div>
+			<div class="list_cell">
+				{query:name=commend_goods as cg join= left join goods as lg on lg.id eq cg.goods_id fields=lg.name,lg.sell_price,market_price,lg.img,lg.id where=commend_id eq 3 AND lg.is_del eq 0 AND lg.id is not null order=lg.sort asc,lg.id desc limit=5}
+				<dl>
+					<dd><a href="{url:/site/products/id/$item[id]}"><img src="{webroot:}{echo:Thumb::get($item['img'],180,180)}" /></a></dd>
+					<dt><a href="{url:/site/products/id/$item[id]}">{$item['name']}</a></dt>
+					<dd><span>¥{$item['sell_price']}</span>/<s>{$item['market_price']}</s></dd>
+				</dl>
+				{/query}
+			</div>
+		</div>
+		{if:isset($content) && $content}
+		<div class="detail_cell">
+			<div class="fix_over_width">
+				{$content}
+			</div>
+		</div>
+		{/if}
+	</div>
+</div>
+<!--商品信息详情页 end-->
+<script type="text/javascript" src="theme/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="theme/js/comm.js"></script>
+<script type="text/javascript">
+/**
+ * 监测库存操作
+ */
+function checkStoreNums()
+{
+	var storeNums = parseInt($.trim($('#data_storeNums').text()));
+	if(storeNums > 0)
+	{
+		openBuy();
+	}
+	else
+	{
+		closeBuy();
+	}
+}
+
+//检查购买数量是否合法
+function checkBuyNums()
+{
+	if(isNaN($('#buyNums').val())){
+		$('#buyNums').val(1);
+		return;
+	}
+	//购买数量小于0
+	var buyNums = parseInt($.trim($('#buyNums').val()));
+	
+	if(buyNums <= 0)
+	{
+		$('#buyNums').val(1);
+		return;
+	}
+
+	//购买数量大于库存
+	var storeNums = parseInt($.trim($('#data_storeNums').text()));
+	if(buyNums >= storeNums)
+	{
+		$('#buyNums').val(storeNums);
+		return;
+	}
+}
+
+/**
+ * 购物车数量的加减
+ * @param code 增加或者减少购买的商品数量
+ */
+function modified(code)
+{
+	var buyNums = parseInt($.trim($('#buyNums').val()));
+	switch(code)
+	{
+		case 1:
+		{
+			buyNums++;
+		}
+		break;
+
+		case -1:
+		{
+			buyNums--;
+		}
+		break;
+	}
+
+	$('#buyNums').val(buyNums);
+	checkBuyNums();
+}
+
+//商品加入购物车
+function joinCart()
+{
+	var buyNums   = parseInt($.trim($('#buyNums').val()));
+	var price     = parseFloat($.trim($('#real_price').text()));
+	var productId = $('#product_id').val();
+	var type      = productId ? 'product' : 'goods';
+	var goods_id  = (type == 'product') ? productId : {$id};
+
+	$.getJSON('{url:/simple/joinCart}',{"goods_id":goods_id,"type":type,"goods_num":buyNums,"random":Math.random},function(content){
+		if(content.isError == false)
+		{
+			//获取购物车信息
+			$.getJSON('{url:/simple/showCart}',{"random":Math.random},function(json)
+			{
+				$('[name="mycart_count"]').text(json.count);
+				$('[name="mycart_sum"]').text(json.sum);
+
+				//展示购物车清单
+				$('#product_myCart').show();
+
+				//暂闭加入购物车按钮
+				$('#joinCarButton').attr('disabled','disabled');
+			});
+		}
+		else
+		{
+			alert(content.message);
+		}
+	});
+}
+
+//立即购买按钮
+function buy_now()
+{
+	//设置必要参数
+	var buyNums  = parseInt($.trim($('#buyNums').val()));
+	var id = {$id};
+	var type = 'goods';
+
+	if($('#product_id').val())
+	{
+		id = $('#product_id').val();
+		type = 'product';
+	}
+
+	{if:$promo}
+	//有促销活动（团购，抢购）
+	var url = '{url:/simple/cart2/id/@id@/num/@buyNums@/type/@type@/promo/$promo/active_id/$active_id}';
+	url = url.replace('@id@',id).replace('@buyNums@',buyNums).replace('@type@',type);
+	{else:}
+	//普通购买
+	var url = '{url:/simple/cart2/id/@id@/num/@buyNums@/type/@type@}';
+	url = url.replace('@id@',id).replace('@buyNums@',buyNums).replace('@type@',type);
+	{/if}
+
+	//页面跳转
+	window.location.href = url;
+}
+$(document).ready(function() {
+    
+});
+</script>

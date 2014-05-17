@@ -1,0 +1,143 @@
+ <link rel="stylesheet" type="text/css" href="theme/css/index.css">
+    <!--顶部导航-->
+    <div class="head_nav">
+        <div class="constr">
+            <a href="#" target="_blank">登录</a>
+            <a href="#" target="_blank">注册</a>
+        <div>
+    </div>
+    <!--顶部导航 end-->
+
+    <!--logo bar-->
+    <div class="head">
+        <div class="constr fix">
+            <div class="logo_cell">
+                <a href="#" target="_blank"><img src="" /></a>
+            </div>
+            <div class="search_cell">
+                <div class="search_bg fix">
+                    <input type="text" />
+                    <a class="submit" href="javascript:;"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--logo bar end-->
+
+    <!--推广-->
+    <div class="recomm">
+        <div class="constr fix">
+            <div class="shopping_nav">
+                <ul>
+                	{query:name=category where=parent_id eq 0 and visibility eq 1 order=sort asc item=$first}
+                    <li>
+                        <div class="top_classify">
+                            <i class="i_fruit"></i>
+                            <a href="{url:/site/pro_list/cat/$first[id]}" target="_blank">{$first['name']}</a>
+                        </div>
+                        <div class="sub_classify">
+                        	{query:name=category where=parent_id eq $first[id] and visibility eq 1 order=sort asc item=$second}
+                            <a href="{url:/site/pro_list/cat/$second[id]}" target="_blank">{$second['name']}</a>
+                            {/query}
+                        </div>
+                    </li>
+                    {/query}
+                </ul>
+            </div>
+
+            <div class="big_pic">
+                <div class="slide_cell">
+                    <div class="top_slide_list fix">
+                        <ul id="topSlide" >
+                        	{foreach:items = $this->big_pic}
+                            <li>
+                                <a href="{$item['link']}" target="_blank"><img src="{$item['content']}"></a>
+                            </li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                    {set:$n=count($this->big_pic)}
+                    <div id="topSlideIndex" class="index">
+                    	{for:from=1 upto=$n}
+                        <a class="{if:$i==1}on{/if}" href="javascript:;" rel="">{$i}</a>
+                        {/for}
+                    </div>
+                </div>
+                <div class="sub_recomm fix" id="subRecomm">
+                    <ul>
+                    	{foreach:items = $this->markets_pic}
+                        <li>
+                            <a href="{$item['link']}" target="_blank"><img src="{$item['content']}"></a>
+                        </li>
+                        {/foreach}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recomm_bar">
+                <ul>
+                	{foreach:items = $this->sidebar_pic}
+                    <li>
+                        <a href="{$item['link']}" target="_blank"><img src="{$item['content']}"></a>
+                    </li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--推广 end-->
+
+    <!--分类展示-->
+    {query:name=category where=parent_id eq 0 and visibility eq 1 order=sort asc item=$first}
+    <div class="classify_list">
+        <div class="classify_title"><h2><a href="#">{$first['name']}</a></h2></div>
+        <div class="fix">
+            <div class="nav fruit_nav">
+                <ul  id="classifySlideIndex">
+                	{set:$i=1}
+                	{query:name=category where=parent_id eq $first[id] and visibility eq 1 order=sort asc item=$second}
+                    <li {if:$i==1}class="on"{/if}><a href="javascript:;" target=""><span>{$second['name']}</span><s></s></a></li>
+                    {set:$i++}
+                    {/query}
+                </ul>
+            </div>
+            <div class="classify_slide">
+            	<div id="classifySlide">
+            	{query:name=category where=parent_id eq $first[id] and visibility eq 1 order=sort asc item=$second}
+                <div class="goods_list fix">
+            	{query:name=category_extend as ca join=left join goods as go on go.id eq ca.goods_id where=ca.category_id eq $second[id] and go.is_del eq 0 order = go.sort asc,go.id desc}
+                   <dl>
+                        <dd class="img"><a href="{url:/site/products/id/$item[id]}" target="blank"><img src="{webroot:}{echo:Thumb::get($item['img'])}" /></a></dd>
+                        <dt class="name"><a href="{url:/site/products/id/$item[id]}" target="blank">{$item['name']}</a></dt>
+                        <dd>
+                            <div>
+                                <del>{$item['market_price']}</del>
+                                <em><s>¥</s>{$item['sell_price']}</em>
+                            </div>
+                            <div><a class="shopping_car" href="javascript:;" onclick="joinCart_list({$item['id']});"></a></div>
+                        </dd>
+                    </dl>
+                    {/query}
+                </div>
+               	{/query}
+                </div>
+			</div>
+        </div>
+    </div>
+    {/query}
+    <!--分类展示 end-->
+<script type="text/javascript" src="theme/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="theme/js/comm.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $.picSlide("",{picBox:$("#topSlide"),navBox:$("#topSlideIndex"),type:"slide",speed:300,delay:5000});
+    $("#subRecomm ul li").hover(function() {
+        $(this).addClass("rel");
+        $(this).find("img").css({"position":"absolute","bottom":"0","width":"273px","height":"132px","left":"-12px"});
+    },function() {
+        $(this).removeClass("rel");
+        $(this).find("img").css({"position":"inherit","width":"249px","height":"119px"});
+    })
+    $.picSlide("",{picBox:$("#classifySlide"),navBox:$("#classifySlideIndex"),type:"slide",slideDir:"top",speed:300,delay:5000});
+});
+</script>
