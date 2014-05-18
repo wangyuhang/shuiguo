@@ -12,17 +12,17 @@
     array (
       0 => 
       array (
-        'host' => 'localhost:3312',
+        'host' => '127.0.0.1:3306',
         'user' => 'root',
-        'passwd' => 'XIANGBIN',
+        'passwd' => '',
         'name' => 'ishop',
       ),
     ),
     'write' => 
     array (
-      'host' => 'localhost:3312',
+      'host' => '127.0.0.1:3306',
       'user' => 'root',
-      'passwd' => 'XIANGBIN',
+      'passwd' => '',
       'name' => 'ishop',
     ),
   ),
