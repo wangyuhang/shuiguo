@@ -96,7 +96,7 @@ body.index{ background:url(../images/front/sprites.gif) 0 -341px repeat-x}
 			.mycart dt a b{margin:0 3px;color:#a40000;font-size:11px}
 	.mycart dd{width:43px;margin:0 0 0 8px;color:#fff}
 		.mycart dd a:link,.mycart dd a:visited,.mycart dd a:hover,.mycart dd a:active{color:#fff}
-	.shopping{position:absolute;right:0;top:28px;width:344px;padding:5px 5px 5px 0;border:2px solid #ffae00;background-color:#fff}
+	.shopping{position:absolute;right:0;top:28px;width:344px;padding:5px 5px 5px 0;border:2px solid #2f2f2f; background-color:#fff}
 		dl.cartlist dd{width:334px;height:60px;padding:5px 0;margin-bottom:5px;border-bottom:1px dashed #c7c7c7;text-align:left}
 			dl.cartlist dd .pic{width:55px;height:55px;margin-right:5px}
 			dl.cartlist dd .title{width:160px;height:60px}
@@ -112,11 +112,11 @@ body.index{ background:url(../images/front/sprites.gif) 0 -341px repeat-x}
 /* searchbar style start */
 .searchbar{height:31px;margin:5px 0 10px;text-align:left}
 	.allsort{position:relative;z-index:100;float:left;width:206px;height:25px;padding:6px 0 0 22px;background:url(../images/front/sprites.gif) 0 -195px no-repeat}
-		.allsort a{font-size:14px;font-weight:bold;color:#ca5707}
+		.allsort a{font-size:14px;font-weight:bold;color:#333}
 		.sortlist{ position:absolute;z-index:11;left:0;top:31px;width:226px;margin-top:-1px;border:1px solid #ddc9be;border-top:0;background:#fdfdfd}
 			.sortlist li{height:35px;padding:1px 0 0 7px;border-top:1px solid #e8e8e8;line-height:35px;background:url(../images/front/sprites.gif) -90px -308px no-repeat}
 		.sortlist li h2{ position:relative;z-index:1;height:32px;padding-left:15px}
-		.sortlist li .sublist{display:none;position:absolute;z-index:12;left:133px;top:2px;width:315px;border:1px solid #d8986b;background-color:#fff}
+		.sortlist li .sublist{display:none;position:absolute;z-index:12;left:133px;top:2px;width:315px;border:1px solid #2f2f2f;background-color:#fff}
 			.sortlist li h2 a{font-size:12px;color:#5f5f5f}
 		.sortlist li.hover h2{z-index:13;width:111px;border-color:#d8986b;border-style:solid;border-width:1px 0 1px 1px;background-color:#fff}
 		.sortlist li.hover .sublist{display:block;background:#fff url(../images/front/sublist_bg.gif) right 145 repeat-y;_height:35px}
@@ -146,7 +146,7 @@ body.index{ background:url(../images/front/sprites.gif) 0 -341px repeat-x}
 	.position a{color:#0b3b8b}
 /* position style end */
 .wrapper{margin-bottom:10px}
-body.second .wrapper{border-top:2px solid #f76f10}
+body.second .wrapper{border-top:2px solid #c40000}
 .main{width:750px}
 .sidebar{width:200px}
 	.wrapper .box{border:1px #e1e1e1 solid}
@@ -685,7 +685,7 @@ strong.result{ display:block;margin:0 0 5px;font-size:16px;color:#666;text-align
 			.order_step li span{display:block}
 		.order_step li .first{background:url(../images/front/sprites_2.gif) 0 -556px no-repeat}
 	.order_step li.last{background-position:right -620px}
-	.order_step li.current{color:#fff;background-color:#ed6807;background-position:right -492px}
+	.order_step li.current{color:#fff;background-color:#c40000;background-position:right -492px}
 		.order_step li.current .first{background-position:0 -588px}
 	.order_step li.current_prev {background-position:right -524px}
 	.order_step li.last_current {background-color:#ed6807;color:#fff;background-position:right -652px}

@@ -56,3 +56,11 @@
 .goods_list dl em s {font-size:12px}
 .goods_list dl .shopping_car{display:block; width:41px; height:41px; background:url(../images/shopping_car.png); position:absolute; bottom:17px; right:20px;}
 
+.navbar{line-height:1.4em; border-bottom:0;}
+.navbar .top_t{background-color:#2f2f2f; border:0; line-height:39px; height:39px; width:240px; float:left; text-align:center; font-size:16px; font-family:\5FAE\8F6F\96C5\9ED1; font-weight:700; color:#fff;
+-webkit-box-shadow: 0 0 0 0;
+-moz-box-shadow: 0 0 0 0;
+-ms-box-shadow: 0 0 0 0;
+-o-box-shadow: 0 0 0 0;
+box-shadow: 0 0 0 0;}
+
