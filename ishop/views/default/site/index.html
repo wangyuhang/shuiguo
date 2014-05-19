@@ -1,11 +1,13 @@
  <link rel="stylesheet" type="text/css" href="theme/css/index.css">
     <!--顶部导航-->
+    <!--
     <div class="head_nav">
         <div class="constr">
             <a href="#" target="_blank">登录</a>
             <a href="#" target="_blank">注册</a>
         </div>
     </div>
+    -->
     <!--顶部导航 end-->
 
     <!--logo bar-->
@@ -16,8 +18,12 @@
             </div>
             <div class="search_cell">
                 <div class="search_bg fix">
-                    <input type="text" />
-                    <a class="search_submit" href="javascript:;"></a>
+                	<form method='get' action='{url:/}'>
+       					<input type='hidden' name='controller' value='site' />
+						<input type='hidden' name='action' value='search_list' />
+                    	<input type="text" name='word' value="输入关键字..."/>
+                    	<a class="search_submit" href="javascript:;" onclick="document.forms[0].submit();"></a>
+                    </form>
                 </div>
             </div>
         </div>
@@ -189,14 +195,14 @@ function joinCart_list(id)
                 <div class="slide_cell">
                     <div class="top_slide_list fix">
                         <ul id="topSlide" >
-                        	{foreach:items = $this->big_pic}
-                            <li>
-                                <a href="{$item['link']}" target="_blank"><img src="{$item['content']}"></a>
-                            </li>
-                            {/foreach}
+                            {if:$this->index_slide}
+							{foreach:items=$this->index_slide}
+							<li title="{$item['name']}"><a href="{url:$item[url]}" target="_blank"><img src="{webroot:$item[img]}" width="750px" title="{$item['name']}" /></a></li>
+							{/foreach}
+							{/if}
                         </ul>
                     </div>
-                    {set:$n=count($this->big_pic)}
+                    {set:$n=count($this->index_slide)}
                     <div id="topSlideIndex" class="index">
                     	{for:from=1 upto=$n}
                         <a class="{if:$i==1}on{/if}" href="javascript:;" rel="">{$i}</a>

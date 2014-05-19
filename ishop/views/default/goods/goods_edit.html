@@ -66,15 +66,15 @@
 								<table class="border_table">
 									<thead>
 										<tr>
-											<th>购买成功增加积分</th><th>排序</th><th>计量单位</th><th>购买成功增加经验值</th>
+											<!-- <th>购买成功增加积分</th> --><th>排序</th><th>计量单位</th><!-- <th>购买成功增加经验值</th>-->
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td><input class="small" name="point" type="text" pattern="int" value="0"/></td>
+											<!-- <td><input class="small" name="point" type="text" pattern="int" value="0"/></td>-->
 											<td><input class="small" name="sort" type="text" pattern="int" value="99"/></td>
 											<td><input class="small" name="unit" type="text" value="千克"/></td>
-											<td><input class="small" name="exp" type="text" pattern="int" value="0"/></td>
+											<!-- <td><input class="small" name="exp" type="text" pattern="int" value="0"/></td>-->
 										</tr>
 									</tbody>
 								</table>
@@ -136,7 +136,7 @@
 										<td>
 											<input type='hidden' name="_groupPrice[<%=i%>]" value="<%=item['groupPrice']%>" />
 											<input class="tiny" name="_sell_price[<%=i%>]" type="text" pattern="float" value="<%=item['sell_price']%>" />
-											<button class="btn" type="button" onclick="memberPrice(this);"><span class="add <%if(item['groupPrice']){%>orange<%}%>">会员价格</span></button>
+											<!-- <button class="btn" type="button" onclick="memberPrice(this);"><span class="add <%if(item['groupPrice']){%>orange<%}%>">会员价格</span></button> -->
 										</td>
 										<td><input class="tiny" name="_cost_price[<%=i%>]" type="text" pattern="float" empty value="<%=item['cost_price']%>" /></td>
 										<td><input class="tiny" name="_weight[<%=i%>]" type="text" pattern="float" empty value="<%=item['weight']%>" /></td>
@@ -151,7 +151,7 @@
 							</div>
 						</td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<th>规格：</th>
 						<td><button class="btn" type="button" onclick="selSpec()"><span class="add">添加规格</span></button></td>
 					</tr>
@@ -166,6 +166,7 @@
 							</select>
 						</td>
 					</tr>
+					
 					<tr id="properties" style="display:none">
 						<th>扩展属性：</th>
 						<td>
@@ -202,15 +203,19 @@
 							</table>
 						</td>
 					</tr>
+					 -->
 					<tr>
 						<th>商品推荐类型：</th>
 						<td>
+							<label class="attr"><input name="_goods_commend[]" type="checkbox" value="3" />热卖商品</label>
+							<!-- 
 							<label class="attr"><input name="_goods_commend[]" type="checkbox" value="1" />最新商品</label>
 							<label class="attr"><input name="_goods_commend[]" type="checkbox" value="2" />特价商品</label>
-							<label class="attr"><input name="_goods_commend[]" type="checkbox" value="3" />热卖商品</label>
 							<label class="attr"><input name="_goods_commend[]" type="checkbox" value="4" />推荐商品</label>
+							 -->
 						</td>
 					</tr>
+					<!-- 
 					<tr>
 						<th>商品品牌：</th>
 						<td>
@@ -222,6 +227,7 @@
 							</select>
 						</td>
 					</tr>
+					 -->
 					<tr>
 						<th>产品相册：</th>
 						<td>

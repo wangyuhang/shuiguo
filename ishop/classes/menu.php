@@ -95,8 +95,8 @@ class Menu
 
 		'统计'=>array(
 				'基础数据统计'=>array(
-          			'/market/user_reg' 	   => '用户注册统计',
-					'/market/spanding_avg' => '人均消费统计',
+//           			'/market/user_reg' 	   => '用户注册统计',
+// 					'/market/spanding_avg' => '人均消费统计',
           			'/market/amount'       => '销售金额统计'
 				),
 				'日志操作记录'=>array(
@@ -150,7 +150,7 @@ class Menu
        			),
 
        			'广告管理'=>array(
-       				'/tools/ad_position_list'=> '广告位列表',
+//        				'/tools/ad_position_list'=> '广告位列表',
        				'/tools/ad_list'=> '广告列表'
        			),
 

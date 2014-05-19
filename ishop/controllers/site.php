@@ -26,10 +26,14 @@ class Site extends IController
 	{		
 		$now = date("Y-m-d H:i:s", ITime::getNow());
 		$tb = new IModel("ad_manage");
-		$this->big_pic = $tb->query("position_id=11 AND start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC LIMIT 5");
-		$this->sidebar_pic = $tb->query("position_id=12 AND start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC LIMIT 3");
-		$this->markets_pic = $tb->query("position_id=13 AND start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC LIMIT 6");
-// 		print_r($this->sidebar_pic);
+// 		$this->big_pic = $tb->query("position_id=11 ORDER BY `order` ASC LIMIT 5");
+		$this->sidebar_pic = $tb->query("position_id=12 ORDER BY `order` ASC LIMIT 3");
+		$this->markets_pic = $tb->query("position_id=13 ORDER BY `order` ASC LIMIT 6");
+		
+		$siteConfigObj = new Config("site_config");
+		$site_config   = $siteConfigObj->getInfo();
+		$index_slide = isset($site_config['index_slide'])? unserialize($site_config['index_slide']) :array();
+		$this->index_slide = $index_slide;
 		$this->redirect('index');
 	}
 
@@ -94,10 +98,7 @@ class Site extends IController
 				$tb_sear->add();
 			}
 		}
-		else
-		{
-			IError::show(403,'请输入正确的查询关键词');
-		}
+
 		$this->cat_id = $cat_id;
 		$this->redirect('search_list');
 	}
