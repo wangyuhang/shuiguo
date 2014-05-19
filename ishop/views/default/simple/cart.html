@@ -313,7 +313,8 @@ function check_finish()
 	}
 	else
 	{
-		window.location.href = '{url:/simple/cart2}';
+		{set:$url = "/simple/cart2/tourist/yes"}
+    	window.location.href = '{url:$url}';
 	}
 }
 
