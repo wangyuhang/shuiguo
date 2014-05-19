@@ -29,7 +29,7 @@ class Site extends IController
 		$this->big_pic = $tb->query("position_id=11 AND start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC LIMIT 5");
 		$this->sidebar_pic = $tb->query("position_id=12 AND start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC LIMIT 3");
 		$this->markets_pic = $tb->query("position_id=13 AND start_time < '{$now}' AND end_time > '{$now}' ORDER BY `order` ASC LIMIT 6");
-		print_r($this->sidebar_pic);
+// 		print_r($this->sidebar_pic);
 		$this->redirect('index');
 	}
 
