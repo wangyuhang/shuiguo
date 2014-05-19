@@ -5,6 +5,4 @@
 
 /ishop/.project
 /ishop/.buildpath
-ishop/config/
-
-ishop/config/config.php
+/ishop/config/
