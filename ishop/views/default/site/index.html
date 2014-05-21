@@ -1,11 +1,13 @@
  <link rel="stylesheet" type="text/css" href="theme/css/index.css">
     <!--顶部导航-->
+    <!--
     <div class="head_nav">
         <div class="constr">
             <a href="#" target="_blank">登录</a>
             <a href="#" target="_blank">注册</a>
         </div>
     </div>
+    -->
     <!--顶部导航 end-->
 
     <!--logo bar-->
@@ -248,7 +250,7 @@ function joinCart_list(id)
                 <div class="goods_list fix">
             	{query:name=category_extend as ca join=left join goods as go on go.id eq ca.goods_id where=ca.category_id eq $second[id] and go.is_del eq 0 order = go.sort asc,go.id desc}
                    <dl>
-                        <dd class="img"><a href="{url:/site/products/id/$item[id]}" target="blank"><img src="{webroot:}{echo:Thumb::get($item['img'])}" /></a></dd>
+                        <dd class="img"><a href="{url:/site/products/id/$item[id]}" target="blank"><img src="{webroot:}{echo:Thumb::get($item['img'],160,160)}" /></a></dd>
                         <dt class="name"><a href="{url:/site/products/id/$item[id]}" target="blank">{$item['name']}</a></dt>
                         <dd>
                             <div>
