@@ -1,0 +1,14 @@
+.container_2{width:1190px; margin-top:20px;}
+.navbar{height:41px;}
+.main{width:970px;}
+
+dl.sorting dd a.current{background:#c40000;}
+
+.display_title,.container_2 .box .title,.container_2 .box .title2,.container_2 .main .box .title3,.help_s .box .title{background:#fafafa;}
+.display_title{border:1px solid #e7e7e7;}
+.display_title ul{top:0; height: 40px; line-height: 40px;}
+.display_title ul li{height: 40px; line-height: 40px; background:#fafafa; border-left:1px solid #e7e7e7; margin-left:-1px;}
+.display_title ul li.current{background:#fff; margin-left:0; z-index:99;}
+.display_title ul li.current a{color:#333;}
+label.btn_gray_m{background:#efefef;}
+label.btn_gray_m input{background:#efefef;}
