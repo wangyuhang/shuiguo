@@ -7,29 +7,7 @@
 {set:$breadGuide = goods_class::catRecursion($this->catId)}
 <link rel="stylesheet" href="views/default/skin/default/css/index.css">
 <link rel="stylesheet" type="text/css" href="theme/css/list.css">
-<div class="position">
-	<span>您当前的位置：</span>
-	<a href="{url:}">首页</a>{foreach:items=$breadGuide} » <a href="{url:/site/pro_list/cat/$item[id]}">{$item['name']}</a>{/foreach}
-</div>
-
-    <!--logo bar-->
-    <div class="head">
-        <div class="constr fix">
-            <div class="logo_cell">
-                <a href="#" target="_blank"><img src="views/default/skin/default/images/front/logo.gif" /></a>
-            </div>
-            <div class="search_cell">
-                <div class="search_bg fix">
-                    <input type="text" />
-                    <a class="search_submit" href="javascript:;"></a>
-                </div>
-            </div>
-            <div class="top_recomm"><img width="102" src="image/erweima.png"></div>
-        </div>
-    </div>
-    <!--logo bar end-->
-
-    <!--购物车-->
+<!--购物车-->
 <div class="navbar fix">
     <div class="constr">
         <div class="top_t"><a href="{url:/site/index}">首页</a></div>
@@ -167,8 +145,11 @@ function joinCart_list(id)
 }
 </script>
 <!--购物车end-->
-
-<div class="wrapper clearfix container_2">
+<div class="position">
+	<span>您当前的位置：</span>
+	<a href="{url:}">首页</a>{foreach:items=$breadGuide} » <a href="{url:/site/pro_list/cat/$item[id]}">{$item['name']}</a>{/foreach}
+</div>
+	<div class="wrapper clearfix container_2">
 
 	<div class="sidebar f_l">
 

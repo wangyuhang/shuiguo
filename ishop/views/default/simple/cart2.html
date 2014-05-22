@@ -451,7 +451,6 @@ function cancel_ticket()
 						<col width="115px" />
 						<col />
 						<col width="85px" />
-						<col width="80px" />
 						<col width="105px" />
 						<col width="80px" />
 						<col width="80px" />
@@ -460,7 +459,6 @@ function cancel_ticket()
 							<tr>
 								<th>图片</th>
 								<th>商品名称</th>
-								<th>赠送积分</th>
 								<th>单价</th>
 								<th>优惠</th>
 								<th>数量</th>
@@ -486,7 +484,6 @@ function cancel_ticket()
 									{/foreach}
 									</p>
 								</td>
-								<td>{$item['point']}</td>
 								<td><b>￥{$item['sell_price']}</b></td>
 								<td>减￥{$item['reduce']}</td>
 								<td>{$item['count']}</td>
@@ -505,7 +502,6 @@ function cancel_ticket()
 								<td class="t_l">
 									<a href="{url:/site/products/id/$item[id]}" class="blue">{$item['name']}</a>
 								</td>
-								<td>{$item['point']}</td>
 								<td>￥<b>{$item['sell_price']}</b></td>
 								<td>减￥{$item['reduce']}</td>
 								<td>{$item['count']}</td>
@@ -528,11 +524,11 @@ function cancel_ticket()
 				<strong>结算信息</strong>
 				<div class="pink_box">
 					<p class="f14 t_l">{if:$this->final_sum != $this->sum}优惠后总金额{else:}商品总金额{/if}：<b>{$this->final_sum}</b> - 代金券：<b name='ticket_value'>0</b> + 税金：<b id='tax_fee'>0</b> + 运费总计：<b id='delivery_fee_show'>0</b> + 保价：<b id='protect_price_value'>0</b> + 支付手续费：<b id='payment_value'>0</b></p>
-
+					<!-- 
 					<a href="javascript:void(0)" id="ticket_a" class="fold" hidefocus>
 						<b class="orange">使用代金券</b>
 					</a>
-
+					 -->
 					<!--代金券列表-->
 					<div class="cart_box t_l gray" style='display:none' id='ticket_box'>
 						<div class="cont">

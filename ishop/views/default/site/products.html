@@ -1,33 +1,4 @@
-
-
 <link rel="stylesheet" type="text/css" href="theme/css/detail.css">
-<!--顶部导航-->
-<!--
-<div class="head_nav">
-	<div class="constr">
-		<a href="#" target="_blank">登录</a>
-		<a href="#" target="_blank">注册</a>
-	</div>
-</div>
--->
-<!--顶部导航 end-->
-
-<!--logo bar-->
-<div class="head">
-	<div class="constr fix">
-		<div class="logo_cell">
-			<a href="#" target="_blank"><img src="" /></a>
-		</div>
-		<div class="search_cell">
-			<div class="search_bg fix">
-				<input type="text" />
-				<a class="search_submit" href="javascript:;"></a>
-			</div>
-		</div>
-	</div>
-</div>
-<!--logo bar end-->
-
 <!--购物车-->
 <div class="navbar fix">
 	<div class="constr">
@@ -356,11 +327,11 @@ function buy_now()
 
 	{if:$promo}
 	//有促销活动（团购，抢购）
-	var url = '{url:/simple/cart2/id/@id@/num/@buyNums@/type/@type@/promo/$promo/active_id/$active_id}';
+	var url = '{url:/simple/cart2/tourist/yes/id/@id@/num/@buyNums@/type/@type@/promo/$promo/active_id/$active_id}';
 	url = url.replace('@id@',id).replace('@buyNums@',buyNums).replace('@type@',type);
 	{else:}
 	//普通购买
-	var url = '{url:/simple/cart2/id/@id@/num/@buyNums@/type/@type@}';
+	var url = '{url:/simple/cart2/tourist/yes/id/@id@/num/@buyNums@/type/@type@}';
 	url = url.replace('@id@',id).replace('@buyNums@',buyNums).replace('@type@',type);
 	{/if}
 

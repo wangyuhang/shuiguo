@@ -21,6 +21,37 @@
 	{set:$sonline = new Sonline();$sonline->show($siteConfig->phone,$siteConfig->service_online);}
 </head>
 <body>
+<!--顶部导航-->
+<!--
+<div class="head_nav">
+    <div class="constr">
+        <a href="#" target="_blank">登录</a>
+        <a href="#" target="_blank">注册</a>
+    </div>
+</div>
+-->
+<!--顶部导航 end-->
+
+<!--logo bar-->
+<div class="head">
+    <div class="constr fix">
+        <div class="logo_cell">
+            <a href="#" target="_blank"><img src="views/default/skin/default/images/front/logo.gif" /></a>
+        </div>
+        <div class="search_cell">
+            <div class="search_bg fix">
+            	<form method='get' action='{url:/}'>
+   					<input type='hidden' name='controller' value='site' />
+		<input type='hidden' name='action' value='search_list' />
+                	<input type="text" name='word' value="输入关键字..."/>
+                	<a class="search_submit" href="javascript:;" onclick="document.forms[0].submit();"></a>
+                </form>
+            </div>
+        </div>
+        <div class="top_recomm"><img width="102" src="image/erweima.png"></div>
+    </div>
+</div>
+<!--logo bar end-->
 {viewcontent}
 {echo:IFilter::stripSlash($siteConfig->site_footer_code)}
 </body>
