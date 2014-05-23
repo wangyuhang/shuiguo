@@ -23,7 +23,7 @@ class Site extends IController
 	}
 
 	function index()
-	{		
+	{
 		$now = date("Y-m-d H:i:s", ITime::getNow());
 		$tb = new IModel("ad_manage");
 // 		$this->big_pic = $tb->query("position_id=11 ORDER BY `order` ASC LIMIT 5");

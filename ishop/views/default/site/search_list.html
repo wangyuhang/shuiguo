@@ -222,10 +222,9 @@ function joinCart_list(id)
 			<div class="pic">
 				<a title="{$item['name']}" href="{url:/site/products/id/$item[id]}"><img src="{webroot:}{echo:Thumb::get($item['img'],$listSize['width'],$listSize['height'])}" width="{$listSize['width']}" height="{$listSize['height']}" alt="{$item['name']}" title="{$item['name']}" /></a>
 			</div>
-			<h3 class="title"><a title="{$item['name']}" class="p_name" href="{url:/site/products/id/$item[id]}">{echo:str_replace($this->word,'<b class="red">'.$this->word.'</b>',$item['name'])}</a><span>总销量：{$item['sale']}<a class="blue" href="{url:/site/comments_list/id/$item[id]}">( {$item['comments']}人评论 )</a></span><span class='grade'><i style='width:{echo:Common::gradeWidth($item['grade'],$item['comments'])}px'></i></span></h3>
+			<h3 class="title"><a title="{$item['name']}" class="p_name" href="{url:/site/products/id/$item[id]}">{echo:str_replace($this->word,'<b class="red">'.$this->word.'</b>',$item['name'])}</a><span>总销量：{$item['sale']}</span><span class='grade'><i style='width:{echo:Common::gradeWidth($item['grade'],$item['comments'])}px'></i></span></h3>
 			<div class="handle">
 				<label class="btn_gray_m"><img src="{skin:images/front/ucenter/shopping.gif}" width="15" height="15" /><input type="button" value="加入购物车" onclick="joinCart_list({$item['id']});"></label>
-				<label class="btn_gray_m"><img src="{skin:images/front/ucenter/favorites.gif}" width="15" height="14" /><input type="button" value="收藏" onclick="favorite_add_ajax('{url:/simple/favorite_add}','{$item['id']}',this);"></label>
 				<div class="msgbox" style="width:350px;display:none">
 					<div class="msg_t"><a class="close f_r" onclick="$(this).parents('.msgbox').hide();">关闭</a>请选择规格</div>
 					<div class="msg_c" id='product_box_{$item['id']}'></div>
