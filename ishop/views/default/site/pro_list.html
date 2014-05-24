@@ -145,11 +145,12 @@ function joinCart_list(id)
 }
 </script>
 <!--购物车end-->
-<div class="position">
-	<span>您当前的位置：</span>
-	<a href="{url:}">首页</a>{foreach:items=$breadGuide} » <a href="{url:/site/pro_list/cat/$item[id]}">{$item['name']}</a>{/foreach}
-</div>
+
 	<div class="wrapper clearfix container_2">
+		<div class="position">
+			<span>您当前的位置：</span>
+			<a href="{url:}">首页</a>{foreach:items=$breadGuide} » <a href="{url:/site/pro_list/cat/$item[id]}">{$item['name']}</a>{/foreach}
+		</div>
 
 	<div class="sidebar f_l">
 
@@ -279,8 +280,11 @@ function joinCart_list(id)
 		{/if}
 		<!--商品列表展示-->
 	</div>
-</div>
 
+	
+</div>
+<div class="footer_show">
+	</div>
 <script type='text/javascript'>
 //价格跳转
 function priceLink()
