@@ -272,9 +272,9 @@ box-shadow: 8px 3px 7px -3px rgba(0,0,0,.3);}
 	.mycart dd{width:43px;margin:0 0 0 8px;color:#fff}
 		.mycart dd a:link,.mycart dd a:visited,.mycart dd a:hover,.mycart dd a:active{color:#fff}
 	.shopping{position:absolute;right:0;top:28px;width:344px;padding:5px 5px 5px 0;border:2px solid #2f2f2f; background-color:#fff}
-		dl.cartlist dd{width:334px;height:60px;padding:5px 0;margin-bottom:5px;border-bottom:1px dashed #c7c7c7;text-align:left}
+		dl.cartlist dd{width:334px;padding:5px 0;margin-bottom:5px;border-bottom:1px dashed #c7c7c7;text-align:left}
 			dl.cartlist dd .pic{width:55px;height:55px;margin-right:5px}
-			dl.cartlist dd .title{width:160px;height:60px}
+			dl.cartlist dd .title{width:160px;}
 				dl.cartlist dd .title a{color:#373737;font:normal 12px/18px "宋体"}
 			dl.cartlist b{color:#da4901;font-size:11px}
 			dl.cartlist input.del{width:51px;height:19px;cursor:pointer;text-indent:-9999px;overflow:hidden;line-height:19px;text-align:left;padding-left:6px;color:#6e6e6e;border:none;background:url(../../views/default/skin/default/images/front/sprites.gif) -228px -195px no-repeat}
@@ -344,4 +344,4 @@ a.btn_pay{display:inline-block;width:119px;height:37px;margin-right:20px;backgro
 .summary div.current .shop_cart input.disabled{background-position:0 -555px}
 /* form table style end */
 
-.footer_show{width:1190px; height:109px; margin:0 auto; background:url(../images/footer_bg.gif);}
+.footer_show{width:1190px; height:109px; margin:0 auto; background:url(../images/footer_bg.gif);} 
