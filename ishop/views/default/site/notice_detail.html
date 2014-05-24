@@ -4,9 +4,9 @@
 	{set:$seo_data['title'].="_".$site_config['name']}
 {/if}
 {set:seo::set($seo_data);}
-
-<div class="position"> <span>您当前的位置：</span> <a href="{url:}"> 首页</a> » <a href="{url:/site/notice}">公告列表</a> » {$this->noticeRow['title']} </div>
+<link rel="stylesheet" href="views/default/skin/default/css/index.css">
 <div class="wrapper clearfix container_2">
+<div class="position"> <span>您当前的位置：</span> <a href="{url:}"> 首页</a> » <a href="{url:/site/notice}">公告列表</a> » {$this->noticeRow['title']} </div>
 <div class="sidebar f_l">
 	<div class="box m_10">
 		<div class="title">热卖商品</div>

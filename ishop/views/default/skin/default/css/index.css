@@ -945,5 +945,4 @@ a.reg_btn{display:block;width:159px;margin:10px 0 0;background-position:0 -210px
 .slide_button{position:absolute;bottom:0px;left:0px;right:0px;height:30px;overflow:hidden;width:100%;background:#fff;}
 	.slide_button a{display:block;height:30px;line-height:30px;color:#333;float:left;background:#dddddd;}
 
-	.footer_show{width:1190px; height:109px; margin:0 auto; background:url(../images/front/footer_bg.gif);}
 	.slide_button a.current,#slide_name a:hover{background:#a8a8a8;color:#fff; font-weight:bold}

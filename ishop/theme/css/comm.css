@@ -343,3 +343,5 @@ a.btn_pay{display:inline-block;width:119px;height:37px;margin-right:20px;backgro
 .summary div.current input.disabled{background-position:0 -599px}
 .summary div.current .shop_cart input.disabled{background-position:0 -555px}
 /* form table style end */
+
+.footer_show{width:1190px; height:109px; margin:0 auto; background:url(../images/footer_bg.gif);}
