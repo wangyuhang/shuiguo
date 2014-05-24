@@ -19,7 +19,7 @@
 
         <div class="mycart">
             <dl>
-                <dt><a href="{url:/simple/cart}"><b name="mycart_count">{$myCartInfo['count']}</b>kg <b name="mycart_sum">{$myCartInfo['sum']}元</b></a></dt>
+                <dt><a href="{url:/simple/cart}"><b name="mycart_count">{$myCartInfo['count']}</b>件商品 <b name="mycart_sum">{$myCartInfo['sum']}元</b></a></dt>
                 <dd><a href="{url:/simple/cart}">去结算</a></dd>
             </dl>
 
@@ -114,11 +114,18 @@ function joinCart_ajax(id,type)
     $.getJSON("{url:/simple/joinCart}",{"goods_id":id,"type":type,"random":Math.random()},function(content){
         if(content.isError == false)
         {
-            var count = parseInt($('[name="mycart_count"]').html()) + 1;
-            $('[name="mycart_count"]').html(count);
-            $('[name="mycart_sum"]').html(content.sum);
-            $('.msgbox').hide();
             alert(content.message);
+        	$.getJSON('{url:/simple/showCart}',{"random":Math.random},function(json)
+   			{
+   				$('[name="mycart_count"]').text(json.count);
+   				$('[name="mycart_sum"]').text(json.sum);
+
+   				//展示购物车清单
+   				$('#product_myCart').show();
+
+   				//暂闭加入购物车按钮
+   				$('#joinCarButton').attr('disabled','disabled');
+   			});
         }
         else
         {
