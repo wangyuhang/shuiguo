@@ -144,9 +144,9 @@ class Menu
 					'/tools/article_list'=> '文章列表'
 				),
 
-				'帮助管理'=>array(
-       				'/tools/help_cat_list'=> '帮助分类',
-       				'/tools/help_list'=> '帮助列表'
+				'底部管理'=>array(
+//        				'/tools/help_cat_list'=> '底部分类',
+       				'/tools/help_list'=> '底部文章列表'
        			),
 
        			'广告管理'=>array(
