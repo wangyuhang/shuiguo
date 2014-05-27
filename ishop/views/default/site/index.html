@@ -3,13 +3,6 @@
 <div class="navbar fix">
     <div class="constr">
         <div class="top_t">所有产品分类</div>
-        <ul>
-            <li><a href="{url:/site/index}">首页</a></li>
-            {query:name=guide}
-            <li><a href="{url:$item[link]}">{$item['name']}<span> </span></a></li>
-            {/query}
-        </ul>
-
         <div class="mycart">
             <dl>
                 <dt><a href="{url:/simple/cart}"><b name="mycart_count">{$myCartInfo['count']}</b>件商品 <b name="mycart_sum">{$myCartInfo['sum']}</b>元</a></dt>
@@ -188,7 +181,11 @@ function joinCart_list(id)
                     <ul>
                     	{foreach:items = $this->markets_pic}
                         <li>
+                        	{if:$item['link']=="javascript:void(0);"}
+                            <img src="{$item['content']}">
+                            {else:}
                             <a href="{$item['link']}" target="_blank"><img src="{$item['content']}"></a>
+                            {/if}
                         </li>
                         {/foreach}
                     </ul>
@@ -199,7 +196,11 @@ function joinCart_list(id)
                 <ul>
                 	{foreach:items = $this->sidebar_pic}
                     <li>
+                       	{if:$item['link']=="javascript:void(0);"}
+                        <img src="{$item['content']}">
+                        {else:}
                         <a href="{$item['link']}" target="_blank"><img src="{$item['content']}"></a>
+                        {/if}
                     </li>
                     {/foreach}
                 </ul>
