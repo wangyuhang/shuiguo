@@ -20,6 +20,9 @@ class Site extends IController
 	function init()
 	{
 		CheckRights::checkUserRights();
+		$siteConfigObj = new Config("site_config");
+		$site_config   = $siteConfigObj->getInfo();
+		$this->service_online = isset($site_config['service_online'])? unserialize($site_config['service_online']) :array();
 	}
 
 	function index()
