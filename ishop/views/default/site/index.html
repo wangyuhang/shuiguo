@@ -210,12 +210,14 @@ function joinCart_list(id)
     <!--推广 end-->
 
     <!--分类展示-->
+    {set:$itemCount=0}
     {query:name=category where=parent_id eq 0 and visibility eq 1 order=sort asc item=$first}
+    {set:$itemCount++}
     <div class="classify_list constr">
         <div class="classify_title"><h2><a href="#">{$first['name']}</a></h2></div>
         <div class="fix">
             <div class="nav fruit_nav">
-                <ul  class="classifySlideIndex">
+                <ul  id="classifySlideIndex{$itemCount}">
                 	{set:$i=1}
                 	{query:name=category where=parent_id eq $first[id] and visibility eq 1 order=sort asc item=$second}
                     <li {if:$i==1}class="on"{/if}><a href="javascript:;" target=""><span>{$second['name']}</span><s></s></a></li>
@@ -224,7 +226,7 @@ function joinCart_list(id)
                 </ul>
             </div>
             <div class="classify_slide">
-            	<div class="classifySlide">
+            	<div id="classifySlide{$itemCount}">
             	{query:name=category where=parent_id eq $first[id] and visibility eq 1 order=sort asc item=$second}
                 <div class="goods_list fix">
             	{query:name=category_extend as ca join=left join goods as go on go.id eq ca.goods_id where=ca.category_id eq $second[id] and go.is_del eq 0 order = go.sort asc,go.id desc}
@@ -259,6 +261,8 @@ $(document).ready(function() {
         $(this).removeClass("rel");
         $(this).find("img").css({"position":"inherit","width":"249px","height":"119px"});
     })
-    $.picSlide("",{picBox:$(".classifySlide"),navBox:$(".classifySlideIndex"),type:"slide",slideDir:"top",speed:300,delay:5000});
+    {for:from=1 upto=$itemCount}
+    $.picSlide("",{picBox:$("#classifySlide{$i}"),navBox:$("#classifySlideIndex{$i}"),type:"slide",slideDir:"top",speed:300,delay:5000});
+    {/for}
 });
 </script>

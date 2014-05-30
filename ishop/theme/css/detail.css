@@ -1,11 +1,11 @@
 body{background:url(../images/detail_bg.png) repeat-x;}
-.constr{width:990px;}
+.constr{width: 1190px;}
 
 .big_pic{width:360px; height:360px; padding:20px; background-color:#fff; float:left;}
 .big_pic img{width:360px; height:360px;}
 
 .simple_info .constr{background-color:#f8f8f8; box-shadow:0 0 14px #999;}
-.info_text{width:590px; float:left;}
+.info_text{width: 790px; float:left;}
 .info_text h2{padding:20px 20px 5px 20px; font-size:18px; font-weight:bold;}
 .info_text .sub_title{padding:0 20px; color:#754;}
 .info_text .pric_cell{padding-top:20px; padding-bottom:5px; background:url(../images/pric_bg.png) repeat-x; width:100%; position:relative; left:0; border-left:4px solid transparent; z-index:10; background-position:right 0;}
@@ -36,12 +36,4 @@ body{background:url(../images/detail_bg.png) repeat-x;}
 .detail_info .recomm_cell{width:190px; float:left; border:1px solid #e4e4e4;}
 .detail_info .recomm_cell .title{padding:0 10px; background-color:#e5e5e5; border-bottom:1px solid #e4e4e4; font-weight:bold;}
 .detail_info .recomm_cell .list_cell{padding:5px; background-color:#fff;}
-.detail_info .detail_cell{width:738px; padding:30px; background-color:#fff; overflow:hidden; float:left;}
-
-
-
-
-
-
-
-
+.detail_info .detail_cell{width: 938px; padding:30px; background-color:#fff; overflow:hidden; float:left;}
