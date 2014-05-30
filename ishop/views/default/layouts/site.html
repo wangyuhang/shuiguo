@@ -50,16 +50,19 @@
         </div>
         
         <div class="top_recomm">
-	        <div class="l"><img width="102" src="image/erweima.png"></div>
+	        <div class="l">
+	        	<div class="l tc"><img width="102" src="image/erweima.png"><div>微信二维码</div></div>
+	        	 <div  class="l tc"><img width="102" src="image/erweima.png"><div>微博二维码</div></div>
+	        </div>
 		    <div class="l">
-		        <a class="sun_intro_qq1" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2842278685&amp;site=qq&amp;menu=yes" target="_blank"></a>
 		        <ul class="bxslider" style="line-height:30px; padding-top:20px;font-size:14px;font-weight:bold;">
 								{foreach:items=$this->service_online}
 					<li title="{$item['name']}"><span>{$item['name']}</span>:<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$item['qq']}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$item['qq']}:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></li>
 					{/foreach}
 								
 				</ul>
-				<font>服务热线：</font><span>400-0009985</span>
+				<div><font>服务热线：</font><span>400-0009985</span></div>
+				<div><font>地址：</font><span>宁波江东区曙光北路168号</span></div>
 	        </div>
         </div>
     </div>
