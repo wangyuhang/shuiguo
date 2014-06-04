@@ -220,7 +220,7 @@ function joinCart_list(id)
                 <ul  id="classifySlideIndex{$itemCount}">
                 	{set:$i=1}
                 	{query:name=category where=parent_id eq $first[id] and visibility eq 1 order=sort asc item=$second}
-                    <li {if:$i==1}class="on"{/if}><a href="javascript:;" target=""><span>{$second['name']}</span><s></s></a></li>
+                    <li {if:$i==1}class="on"{/if}><a href="{url:/site/pro_list/cat/$second[id]}" target="_blank"><span>{$second['name']}</span><s></s></a></li>
                     {set:$i++}
                     {/query}
                 </ul>
