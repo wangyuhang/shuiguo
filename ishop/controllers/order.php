@@ -1194,7 +1194,7 @@ class Order extends IController
 		$config = new Config("site_config");
 		$config_info = $config->getInfo();
      	$data['set']['name'] = isset($config_info['name'])  ? $config_info['name']  : '';
-     	$data['set']['mobile'] = isset($config_info['mobile'])  ? $config_info['mobile']  : '';
+     	$data['set']['phone'] = isset($config_info['phone'])  ? $config_info['phone']  : '';
      	$data['set']['email'] = isset($config_info['email'])  ? $config_info['email']  : '';
      	$data['set']['url'] = isset($config_info['url'])  ? $config_info['url']  : '';
      	
