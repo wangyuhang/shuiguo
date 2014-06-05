@@ -1197,6 +1197,22 @@ class Order extends IController
      	$data['set']['mobile'] = isset($config_info['mobile'])  ? $config_info['mobile']  : '';
      	$data['set']['email'] = isset($config_info['email'])  ? $config_info['email']  : '';
      	$data['set']['url'] = isset($config_info['url'])  ? $config_info['url']  : '';
+     	
+     	$tb_deliver_doc = new IQuery('delivery_doc as dd');
+     	$tb_deliver_doc->join = 'left join delivery_goods as dg on dd.id = dg.delivery_id';
+     	$tb_deliver_doc->fields = 'dd.province,dd.city,dd.area,dd.name,dd.mobile,dd.telphone,dd.address,dd.postcode,dd.delivery_type';
+     	$tb_deliver_doc->where = 'dd.order_id='.$order_id;
+     	$deliver_doc_info = $tb_deliver_doc->find();
+     	if(count($deliver_doc_info)>0)
+     	{
+     		$data['deliver'] = $deliver_doc_info[0];
+     		$areas_id = $data['deliver']['province'].','.$data['deliver']['city'].','.$data['deliver']['area'];
+     		$tb_area = new IModel('areas');
+     		$area_info = $tb_area->query('area_id in ('.$areas_id.')');
+     		$data['area_addr'] = $area_info[0]['area_name'].'&nbsp;'.$area_info[1]['area_name'].'&nbsp;'.$area_info[2]['area_name'];
+     	
+     	}
+     	
 		$this->setRenderData($data);
 		$this->redirect("shop_template");
 	}
